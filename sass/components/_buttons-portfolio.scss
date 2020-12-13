@@ -1,0 +1,16 @@
+.btn {
+    @extend %btn;
+    font-family: $main-font-family;
+    @include fonts (16px, 500, 1.625); 
+    padding: 6px 22px;
+    color: $main-text-color;
+    background-color: $btn-background;
+
+    &:hover,
+    &:focus {
+      color: $white;
+      background-color: $accent-color;
+    }
+}
+  
+  

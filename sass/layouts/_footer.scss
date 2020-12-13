@@ -1,0 +1,128 @@
+footer {
+  background-color: $footer-background;
+  display: flex;
+}
+
+.footer {
+  display: flex;
+  padding-top: 60px;
+}
+
+.footer-logo {
+  margin-right: 70px;
+}
+
+.footer-address {
+  padding-top: 21px;
+}
+
+.logo-web-footer {
+  color: $white;
+}
+.footer-contact {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-icons {
+  margin-right: 93px;
+}
+
+.footer-icons-title {
+  @include fonts(14px, 700, 1.14);
+  text-transform: uppercase;
+  color: $white;
+  padding-top: 12px;
+  margin-bottom: 0px;
+}
+
+.footer-social-icons {
+  display: flex;
+  padding-top: 20px;
+}
+
+.footer-social-icons-items:not(:last-child) {
+  margin-right: 10px;
+}
+
+.footer-social-icons-svg {
+  width: 20px;
+  height: 20px;
+  fill: $white;
+}
+
+.footer-social-icons-link {
+  @include flex();
+  width: 44px;
+  height: 44px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: $main-transition;
+
+    &:hover,
+    &:focus {
+      background-color: $accent-color;
+    }
+}
+
+
+.footer-form {
+  display: flex;
+  padding-top: 20px;
+}
+
+.footer-form-fild {
+  width: 358px;
+  height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  margin-right: 12px;
+}
+
+.footer-form-input {
+  width: 100%;
+  height: 100%;
+  background-color: $footer-background;
+  border: none;
+  padding-left: 16px;
+  outline: none;
+
+  font-family: $main-font-family;
+  @include fonts(16px, 400, 1.25);
+  align-items: center;
+  color: $white;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+}
+
+
+.footer-btn {
+  @extend %btn;
+  padding: 10px 29px;
+  font-family: $main-font-family;
+  @include fonts(16px, 700, 1.87, 0.06em);
+  color: $white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  background-color: $accent-color;
+
+  &:hover,
+  &:focus {
+    background-color: $white;
+    color: $accent-color;
+
+    .logo-send,
+    .logo-send {
+      fill: $accent-color;
+    }
+  }
+}
+
+
+.footer-form-input:-webkit-autofill,
+.footer-form-input:-webkit-autofill:hover,
+.footer-form-input:-webkit-autofill:focus {
+  -webkit-text-fill-color: $white;
+  -webkit-box-shadow: 0 0 0px 1000px $footer-background inset;
+}

@@ -1,0 +1,8 @@
+.container-item {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .container-menu-item:not(:last-child) {
+    margin-right: 8px;
+  }

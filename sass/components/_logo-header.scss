@@ -1,0 +1,54 @@
+.logo-mail {
+  display: inline-flex;
+  align-items: center;
+
+  & {
+    display: block;
+    width: 16px;
+    height: 12px;
+    margin-right: 10px;
+    fill: $title-color;
+    transition: $main-transition;
+  }
+
+}
+
+.link:hover .logo-mail,
+.link:focus .logo-mail {
+  fill: $accent-color;
+}
+
+.logo-phone {
+  display: inline-flex;
+  align-items: center;
+
+
+  & {
+    display: block;
+    width: 10px;
+    height: 16px;
+    margin-right: 10px;
+    fill: $title-color;
+    transition: $main-transition;
+  }
+
+}
+
+.link:hover .logo-phone,
+.link:focus .logo-phone {
+  fill: $accent-color;
+}
+
+
+.logo {
+  font-family: $secondary-font-family;
+  @include fonts(26px, 700, 1.19)
+}
+
+.logo-web {
+  color: $accent-color;
+}
+
+.logo-studio {
+  color: $main-text-color;
+}

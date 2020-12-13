@@ -1,0 +1,38 @@
+.social-icons {
+  display: flex;
+  justify-content: center;
+  padding-top: 16px;
+  padding-bottom: 30px;
+  padding-right: 32px;
+  padding-left: 32px;
+}
+
+.social-icons-items:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social-icons-link {
+  @include flex();
+  width: 44px;
+  height: 44px;
+  background-color: $white;
+  /*background-color: #2f303a;*/
+  border-radius: 50%;
+  transition: $main-transition;
+
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+  }
+
+  &:hover .social-icons-svg,
+  &:focus .social-icons-svg {
+    fill: $white;
+  }
+}
+
+.social-icons-svg {
+  width: 20px;
+  height: 20px;
+  fill: $clients;
+}

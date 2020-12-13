@@ -1,0 +1,38 @@
+.occupation-item {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 50px;
+}
+
+.occupation-item-list {
+  position: relative;
+  width: calc((100% - 60px) / 3);
+  margin-left: 0px;
+
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  > img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.occupation-label {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  margin: 0px;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  width: 100%;
+  font-family: $main-font-family;
+  @include fonts(14px, 700, 1.14,);
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $white;
+  background-color: rgba(47, 48, 58, 0.8);
+}

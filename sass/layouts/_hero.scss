@@ -1,0 +1,36 @@
+.hero {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: $footer-background;
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/heroes.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.hero-content {
+  max-width: 700px;
+  /*display: flex;*/
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  padding-top: 200px;
+  padding-bottom: 200px;
+}
+
+.page-title {
+  font-family: $main-font-family;
+  @include fonts(44px, 900, 1.36, 0.06em);
+  text-align: center;
+  text-transform: uppercase;
+  color: $white;
+  margin-top: 0px;
+  margin-bottom: 30px;
+}
