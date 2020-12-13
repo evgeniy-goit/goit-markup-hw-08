@@ -1,29 +1,73 @@
 .command {
+  @include for-size(desktop) {
+    margin-top: 94px;
+  } 
+}
+
+.command-container {
   background-color: #f5f4fa;
-  margin-top: 94px;
-  padding-bottom: 94px;
+  margin-top: 60px;
+  padding-bottom: 60px;
+
+  @include for-size(desktop) {
+    margin-top: 0px;
+    padding-bottom: 94px;
+  } 
+
 }
 
 .command-item {
   display: flex;
-  padding-top: 50px;
+  flex-wrap: wrap;
+  padding-top: 30px;
+
+  @include for-size(desktop) {
+    padding-top: 50px;
+    flex-wrap: nowrap;
+  } 
 }
 
 .command-members {
   display: block;
   border: 1px;
   border-radius: 0px 0px 4px 4px;
-  width: calc((100% - 60px) / 4);
+  max-width: 450px;
   background-color: $white;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
 
+    &:not(:first-child) {
+      margin-top: 30px;
+    }
+
+    @include for-size(tablet) {
+    flex-basis: calc(100% / 2 - 30px);
+
+    &:nth-child(2n + 1) {
+      margin-right: 30px;
+    }
+
+    &:nth-child(2) {
+      margin-top: 0px;
+    }  
+}
+
+  @include for-size(desktop) {
+    flex-basis: calc((100% - 60px) / 4);
+
+    /*&:nth-child(2n + 1) {
+      margin-right: 0px;
+    }*/
+
+    &:nth-child(n + 3) {
+      margin-top: 0px;
+    }
+
     &:not(:last-child) {
       margin-right: 30px;
     }
+  }
 }
-
-
 .command-name {
   font-family: $main-font-family;
   @include fonts(16px, 500, 1.187);
@@ -45,3 +89,4 @@
   margin-top: 0px;
   margin-bottom: 0px;
 }
+ 

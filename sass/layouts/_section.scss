@@ -1,13 +1,21 @@
 .section {
-  padding-top: 94px;
+  padding-top: 60px;
   padding-bottom: 0px;
+
+  @include for-size(desktop) {
+    padding-top: 94px;
+  }
 }
 
 .section-title {
   font-family: $main-font-family;
-  @include fonts(36px, 700, 1.16);
+  @include fonts(28px, 700, 1.18);
   text-align: center;
   color: $main-text-color;
   margin-top: 0px;
   margin-bottom: 0px;
+
+  @include for-size(desktop) {
+    @include fonts(36px, 700, 1.16);
+  }
 }

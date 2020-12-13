@@ -5,22 +5,55 @@
 
 .features-list {
   display: block;
-  flex-basis: calc(100% / 4 - 30px);
+  /**/
+  @include for-size(tablet) {
+    flex-basis: calc(100% / 2 - 30px);
 
-  &:not(:last-child) {
-    margin-right: 30px;
+    &:nth-child(2n + 1) {
+      margin-right: 30px;
+    }
+
+    &:nth-child(n + 3) {
+      margin-top: 30px;
+    }
+    
+  }
+
+  @include for-size(desktop) {
+    flex-basis: calc(100% / 4 - 30px);
+
+    &:nth-child(2n + 1) {
+      margin-right: 0px;
+    }
+
+    &:nth-child(n + 3) {
+      margin-top: 0px;
+    }
+
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
   }
 
   &::before {
     content: "";
     display: block;
-    width: 270px;
+    max-width: 450px;
     height: 120px;
     margin-bottom: 30px;
     border-radius: 4px;
     background-color: $feautures-logo;
     background-repeat: no-repeat;
     background-position: center;
+
+    @include for-size(tablet) {
+      width: 354px;
+    }
+
+    @include for-size(desktop) {
+      width: 270px;
+    }
+
   }
 
   &:nth-child(1)::before {
@@ -50,8 +83,7 @@
 }
 
 .features-description {
-  font-weight: 400;
-  line-height: 1.71;
+  @include fonts(14px, 400, 1.71);
   color: $title-color;
   margin-top: 10px;
   margin-bottom: 0px;

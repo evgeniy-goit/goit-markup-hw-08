@@ -2,10 +2,21 @@
   display: flex;
   justify-content: center;
   padding-top: 16px;
-  padding-bottom: 30px;
-  padding-right: 32px;
-  padding-left: 32px;
+  padding-bottom: 24px;
+  padding-right: 122px;
+  padding-left: 122px;
+
+  @include for-size(tablet) {
+    padding-right: 74px; 
+    padding-left: 74px;
+  } 
+
+  @include for-size(desktop) {
+    padding-bottom: 30px;
+    padding-right: 32px;
+    padding-left: 32px;
 }
+} 
 
 .social-icons-items:not(:last-child) {
   margin-right: 10px;

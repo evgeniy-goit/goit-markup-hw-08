@@ -65,17 +65,41 @@ body {
   color: #757575;
 }
 
+*, ::after, ::before {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  outline: 2px solid tomato;
+}
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
 .container {
-  width: 1200px;
+  width: 100%;
   padding-left: 15px;
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media (min-width: 480px) {
+  .container {
+    width: 480px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 768px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1200px;
+  }
 }
 
 .header-container {
@@ -115,20 +139,35 @@ h3 {
 }
 
 .section {
-  padding-top: 94px;
+  padding-top: 60px;
   padding-bottom: 0px;
+}
+
+@media (min-width: 1200px) {
+  .section {
+    padding-top: 94px;
+  }
 }
 
 .section-title {
   font-family: Roboto, sans-serif;
-  font-size: 36px;
+  font-size: 28px;
   font-weight: 700;
-  line-height: 1.16;
+  line-height: 1.18;
   letter-spacing: 0.03em;
   text-align: center;
   color: #212121;
   margin-top: 0px;
   margin-bottom: 0px;
+}
+
+@media (min-width: 1200px) {
+  .section-title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.16;
+    letter-spacing: 0.03em;
+  }
 }
 
 .project-name {
