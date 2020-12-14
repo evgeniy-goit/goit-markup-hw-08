@@ -1,9 +1,8 @@
 .clients {
-  /*padding-bottom: 94px;*/
   padding-bottom: 60px;
 
   @include for-size(desktop) {
-    padding-bottom: 60px;
+    padding-bottom: 94px;
   }
 }
 
@@ -11,7 +10,6 @@
   display: flex;
   flex-wrap: wrap;
   padding-top: 30px;
-  /*padding-top: 50px;*/
 
   @include for-size(desktop) {
     flex-wrap: nowrap;
@@ -20,14 +18,7 @@
 }
 
 .clients-companies {
-  /*display: block;*/
   width: calc((100% - 30px) / 2);
-  /*max-width: 210px;*/
-  /*width: calc(100% / 2 - 30px);*/
-
-  /*&:not(:last-child) {
-    margin-right: 30px;
-  }*/
 
   &:nth-child(2n + 1) {
     margin-right: 30px;
@@ -38,7 +29,7 @@
   }
 
   @include for-size(tablet) {
-    width: calc((100% - 30px) / 3);
+    width: calc((100% - 60px) / 3);
 
     margin-right: 30px;
 
@@ -46,8 +37,24 @@
       margin-right: 0px;
     }
 
+    &:nth-child(n + 3) {
+      margin-top: 0px;
+    }
+
     &:nth-child(n + 4) {
       margin-top: 30px;
+    }
+  }
+
+  @include for-size(desktop) {
+    width: calc((100% - 60px) / 6);
+
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+
+    &:nth-child(n) {
+      margin-top: 0px;
     }
   }
 }
@@ -56,20 +63,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /*width: 170px;*/
   max-width: 210px;
   height: 90px;
   border: 1px solid $clients;
   border-radius: 4px;
   transition: $main-transition;
 
+  @include for-size(tablet) {
+    max-width: 226px;
+  }
+
+  @include for-size(desktop) {
+    width: 170px;
+  }  
+
   &:hover,
   &:focus {
     border: 1px solid $accent-color;
-  }
-
-  @include for-size(tablet) {
-    width: 226px;
   }
 }
 
