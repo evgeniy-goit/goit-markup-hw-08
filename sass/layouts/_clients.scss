@@ -1,26 +1,63 @@
 .clients {
-  padding-bottom: 94px;
+  /*padding-bottom: 94px;*/
+  padding-bottom: 60px;
+
+  @include for-size(desktop) {
+    padding-bottom: 60px;
+  }
 }
 
 .clients-item {
   display: flex;
-  padding-top: 50px;
-}
+  flex-wrap: wrap;
+  padding-top: 30px;
+  /*padding-top: 50px;*/
 
-.clients-companies {
-  width: calc((100% - 60px) / 6);
-
-  &:not(:last-child) {
-    margin-right: 30px;
+  @include for-size(desktop) {
+    flex-wrap: nowrap;
+    padding-top: 50px;
   }
 }
 
+.clients-companies {
+  /*display: block;*/
+  width: calc((100% - 30px) / 2);
+  /*max-width: 210px;*/
+  /*width: calc(100% / 2 - 30px);*/
+
+  /*&:not(:last-child) {
+    margin-right: 30px;
+  }*/
+
+  &:nth-child(2n + 1) {
+    margin-right: 30px;
+  }
+
+  &:nth-child(n + 3) {
+    margin-top: 30px;
+  }
+
+  @include for-size(tablet) {
+    width: calc((100% - 30px) / 3);
+
+    margin-right: 30px;
+
+    &:nth-child(3n + 3) {
+      margin-right: 0px;
+    }
+
+    &:nth-child(n + 4) {
+      margin-top: 30px;
+    }
+  }
+}
 
 .clients-companies-link {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 170px;
+  /*width: 170px;*/
+  max-width: 210px;
   height: 90px;
   border: 1px solid $clients;
   border-radius: 4px;
@@ -30,15 +67,16 @@
   &:focus {
     border: 1px solid $accent-color;
   }
+
+  @include for-size(tablet) {
+    width: 226px;
+  }
 }
-
-
 
 .clients-companies-logo {
   fill: $clients;
   transition: $main-transition;
 }
-
 
 .clients-companies-link:hover .clients-companies-logo,
 .clients-companies-link:focus .clients-companies-logo {
