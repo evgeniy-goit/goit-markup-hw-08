@@ -26,9 +26,9 @@ footer {
 }
 
 .footer-address {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /*display: block;
+  /*justify-content: center;
+  align-items: center;*/
   padding-top: 21px;
 }
 
@@ -41,9 +41,14 @@ footer {
   color: $white;
   padding-bottom: 60px;
 
-  > li {
+  /*> li {
     padding-top: 9px;
+  }*/
+
+  > li:not(:first-child) {
+    padding-top: 8px;
   }
+
 }
 
 .logo-web-footer {

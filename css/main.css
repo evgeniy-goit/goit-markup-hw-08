@@ -631,15 +631,9 @@ footer {
 }
 
 .footer-address {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  /*display: block;
+  /*justify-content: center;
+  align-items: center;*/
   padding-top: 21px;
 }
 
@@ -658,10 +652,13 @@ footer {
   font-style: normal;
   color: #ffffff;
   padding-bottom: 60px;
+  /*> li {
+    padding-top: 9px;
+  }*/
 }
 
-.link-styles > li {
-  padding-top: 9px;
+.link-styles > li:not(:first-child) {
+  padding-top: 8px;
 }
 
 .logo-web-footer {
