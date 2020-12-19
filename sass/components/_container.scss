@@ -1,8 +1,26 @@
-.container-item {
+  .container-item {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+
+    @include for-size(tablet) {
+      flex-wrap: nowrap;
+      justify-content: center;
+    }
   }
   
-  .container-menu-item:not(:last-child) {
+  .container-menu-item {
+
+    &:not(:last-child) {
     margin-right: 8px;
+    }
+
+    &:nth-child(n + 4) {
+      margin-top: 15px;
+    }
+
+    @include for-size(tablet) {
+      &:nth-child(n + 4) {
+        margin-top: 0px;
+      }
+    }  
   }

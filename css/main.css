@@ -800,6 +800,9 @@ footer {
 @media (min-width: 1200px) {
   .footer-icons-title {
     padding-top: 12px;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
 }
 
