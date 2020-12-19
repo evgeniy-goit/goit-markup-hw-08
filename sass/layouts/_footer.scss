@@ -1,6 +1,5 @@
 footer {
   background-color: $footer-background;
-  /*display: flex;*/
 }
 
 .footer {
@@ -10,13 +9,35 @@ footer {
   @include for-size(desktop) {
     display: flex;
   }
+
+  @include for-size(desktop) {
+    display: flex;
+    padding-bottom: 60px;
+  }
+}
+
+.footer-container {
+  @include for-size(tablet) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include for-size(desktop) {
+    justify-content: flex-start;
+  }
 }
 
 .footer-logo {
-  /*margin-right: 70px;*/
   display: block;
-  margin-right: auto;
-  margin-left: auto;
+
+  @include for-size(tablet) {
+    margin-left: 60px;
+  }
+
+  @include for-size(desktop) {
+    margin-left: 0px;
+    margin-right: 70px;
+  }
 
   > a {
     display: flex;
@@ -27,7 +48,11 @@ footer {
 
 .footer-address {
   display: block;
-  padding-top: 21px;
+  padding-top: 20px;
+
+  @include for-size(tablet) {
+
+  }
 }
 
 .link-styles {
@@ -38,6 +63,10 @@ footer {
   /*> li {
     padding-top: 9px;
   }*/
+
+  @include for-size(tablet) {
+    padding-bottom: 0px;
+  }
 
   > li {
     padding-top: 8px;
@@ -57,40 +86,73 @@ footer {
 .logo-web-footer {
   color: $white;
 }
+
 .footer-contact {
   color: rgba(255, 255, 255, 0.7);
 }
 
 .footer-icons {
-  display: flex;
+  display: block;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   /*margin-right: 93px;*/
+
+  @include for-size(tablet) {
+    margin-right: 75px;
+    margin-top: 5px;
+  }
+
+  @include for-size(desktop) {
+    display: flex;
+    margin-right: 93px;
+    margin-top: 0px;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 }
 
 .footer-icons-block {
-  display: flex;
+  display: block;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 60px;
+
+  @include for-size(desktop) {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 0px;
+  }
 }
 
 .footer-form-block {
-
+  @include for-size(desktop) {
+    display: flex;
+  }
 }
 
 .footer-icons-title {
   @include fonts(14px, 700, 1.14);
   text-transform: uppercase;
   color: $white;
-  padding-top: 12px;
   margin-bottom: 0px;
+  text-align: center;
+
+  @include for-size(desktop) {
+    padding-top: 12px;
+  }
 }
 
 .footer-social-icons {
   display: flex;
   padding-top: 20px;
+  justify-content: center;
+
+  @include for-size(desktop) {
+   
+  }
 }
 
 .footer-social-icons-items:not(:last-child) {
@@ -124,15 +186,31 @@ footer {
   justify-content: center;
   align-items: center;
   padding-top: 20px;
+  padding-bottom: 60px;
+
+  @include for-size(desktop) {
+    padding-bottom: 0px;
+    flex-direction: row;
+  }
 }
 
 .footer-form-fild {
-  width: 358px;
+  width: 100%;
   height: 50px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
-  margin-right: 12px;
+  text-align: center;
+
+  @include for-size(tablet) {
+    width: 450px;
+  }
+
+  
+  @include for-size(desktop) {
+    width: 358px;
+    margin-right: 12px;
+  }
 }
 
 .footer-form-input {
@@ -157,6 +235,7 @@ footer {
 .footer-btn {
   @extend %btn;
   padding: 10px 29px;
+  margin-top: 20px;
   font-family: $main-font-family;
   @include fonts(16px, 700, 1.87, 0.06em);
   color: $white;
@@ -172,6 +251,10 @@ footer {
     .logo-send {
       fill: $accent-color;
     }
+  }
+
+  @include for-size(desktop) {
+  margin-top: 0px;
   }
 }
 

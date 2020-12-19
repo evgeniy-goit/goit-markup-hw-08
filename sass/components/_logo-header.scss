@@ -42,7 +42,11 @@
 
 .logo {
   font-family: $secondary-font-family;
-  @include fonts(26px, 700, 1.19)
+  @include fonts(24px, 700, 1.16)
+
+  @include for-size(desktop) {
+    @include fonts(26px, 700, 1.19);
+  }
 }
 
 .logo-web {
