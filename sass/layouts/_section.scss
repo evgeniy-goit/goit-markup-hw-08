@@ -12,10 +12,11 @@
   @include fonts(28px, 700, 1.18);
   text-align: center;
   color: $main-text-color;
-  margin-top: 0px;
+  padding-top: 60px;
   margin-bottom: 0px;
 
   @include for-size(desktop) {
     @include fonts(36px, 700, 1.16);
+    padding-top: 94px;
   }
 }
