@@ -1,11 +1,15 @@
 .header-container {
   width: 100%;
-  padding-top: 24px;
-  padding-bottom: 25px;
-  @include flex(flex, flex-end, center)
+  padding-top: 10px;
+  padding-bottom: 10px;
+  @include flex(flex, space-between, center)
 
   .logo {
-    margin-right: 93px;
+    
+
+    @include for-size(desktop) {
+      margin-right: 93px;
+    }
   }
 
   @include for-size(mobile) {
@@ -14,10 +18,16 @@
 
   @include for-size(tablet) {
     width: 768px;
+
+    padding-top: 21px;
+    padding-bottom: 21px;
   }
 
   @include for-size(desktop) {
     width: 1200px;
+
+    padding-top: 24px;
+  padding-bottom: 25px;
   }
 }
 
@@ -27,10 +37,6 @@
   @include for-size(tablet) {
     display: inline-flex;
   }
-}
-
-.header-mobile-container {
-  display: flex;
 }
 
 .menu .active {
@@ -59,7 +65,7 @@
 }
 
 .navigation {
-  display: flex;
+  display: none;
   align-items: center;
   margin-right: auto;
 }
