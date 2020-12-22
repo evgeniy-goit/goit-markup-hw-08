@@ -1,7 +1,37 @@
-.menu {
-  display: inline-flex;
+.header-container {
+  width: 100%;
+  padding-top: 24px;
+  padding-bottom: 25px;
+  @include flex(flex, flex-end, center)
+
+  .logo {
+    margin-right: 93px;
+  }
+
+  @include for-size(mobile) {
+    width: 480px;
+  }
+
+  @include for-size(tablet) {
+    width: 768px;
+  }
+
+  @include for-size(desktop) {
+    width: 1200px;
+  }
 }
 
+.menu {
+  display: none;
+
+  @include for-size(tablet) {
+    display: inline-flex;
+  }
+}
+
+.header-mobile-container {
+  display: flex;
+}
 
 .menu .active {
   color: $accent-color;
@@ -9,7 +39,7 @@
   &::after {
     content: "";
     position: absolute;
-    bottom: -125%;
+    bottom: -220%;
     display: block;
     width: 100%;
     height: 4px;
@@ -18,6 +48,10 @@
   }
 
 } 
+
+.menu-item {
+  display: flex;
+}
 
 .menu-item:not(:last-child) {
   position: relative;
@@ -28,4 +62,51 @@
   display: flex;
   align-items: center;
   margin-right: auto;
+}
+
+.header-mobile-btn {
+  @include flex();
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: $white;
+
+  @include for-size(tablet) {
+    display: none;
+  }
+}
+
+
+.header-logo-open {
+  width: 24px;
+  height: 16px;
+  fill: black;
+}
+
+.list-link {
+  display: none;
+
+  @include for-size(tablet) {
+    display: block;
+  }
+
+  @include for-size(desktop) {
+    display: flex;
+  }
+}
+
+.cont-link:not(:last-child) {
+  margin-right: 30px;
+}
+
+.menu-link {
+  @include fonts(14px, 500, 1.14, 0.02em);
+  color: $main-text-color;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  @include fonts(14px, 500, 1.14, 0.02em);
+  color: $title-color;
 }

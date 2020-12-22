@@ -1,11 +1,3 @@
-.list-link {
-  display: flex;
-}
-
-.cont-link:not(:last-child) {
-  margin-right: 30px;
-}
-
 .link {
   color: inherit;
   text-decoration: none;
@@ -18,14 +10,4 @@
 
 }
 
-.menu-link {
-  @include fonts(14px, 500, 1.14, 0.02em);
-  color: $main-text-color;
-}
 
-.contact-link {
-  display: flex;
-  align-items: center;
-  @include fonts(14px, 500, 1.14, 0.02em);
-  color: $title-color;
-}

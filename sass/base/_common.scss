@@ -35,16 +35,7 @@ html {
   }
 }
 
-.header-container {
-  width: 1200px;
-  padding-top: 24px;
-  padding-bottom: 25px;
-  @include flex(flex, flex-end, center)
 
-  .logo {
-    margin-right: 93px;
-  }
-}
 
 .header {
   background-color: $white;
