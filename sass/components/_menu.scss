@@ -1,12 +1,9 @@
 .header-container {
+  position: relative;
   width: 100%;
   padding-top: 10px;
   padding-bottom: 10px;
-  @include flex(flex, space-between, center)
-
-  .logo {
-    
-
+  @include flex(flex, space-between, center) .logo {
     @include for-size(desktop) {
       margin-right: 93px;
     }
@@ -27,7 +24,7 @@
     width: 1200px;
 
     padding-top: 24px;
-  padding-bottom: 25px;
+    padding-bottom: 25px;
   }
 }
 
@@ -52,8 +49,7 @@
     border-radius: 2px;
     background-color: $accent-color;
   }
-
-} 
+}
 
 .menu-item {
   display: flex;
@@ -68,26 +64,45 @@
   display: none;
   align-items: center;
   margin-right: auto;
+
+  @include for-size(tablet) {
+    display: flex;
+  }
 }
 
 .header-mobile-btn {
-  @include flex();
+  /*@include flex();
   width: 40px;
   height: 40px;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: $white;
+  background-color: $white;*/
+  display: inline-flex;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+
+  .mobile-icon-close {
+    display: none;
+  }
+
+  &.is-open .mobile-icon-close {
+    display: block;
+  }
+
+  &.is-open .mobile-icon-open {
+    display: none;
+  }
 
   @include for-size(tablet) {
     display: none;
   }
 }
 
-
-.header-logo-open {
+/*.header-logo-open {
   width: 24px;
   height: 16px;
   fill: black;
-}
+}*/
 
 .list-link {
   display: none;
@@ -102,7 +117,9 @@
 }
 
 .cont-link:not(:last-child) {
-  margin-right: 30px;
+  @include for-size(desktop) {
+    margin-right: 30px;
+  }
 }
 
 .menu-link {
@@ -115,4 +132,23 @@
   align-items: center;
   @include fonts(14px, 500, 1.14, 0.02em);
   color: $title-color;
+}
+
+.header-mobile-container {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  width: 100%;
+
+  .list-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.header-mobile-menu {
+  /*display: flex;*/
+  text-align: center;
 }

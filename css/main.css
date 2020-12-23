@@ -988,6 +988,7 @@ footer {
 }
 
 .header-container {
+  position: relative;
   width: 100%;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -1076,20 +1077,38 @@ footer {
   margin-right: auto;
 }
 
+@media (min-width: 768px) {
+  .navigation {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
 .header-mobile-btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  /*@include flex();
   width: 40px;
   height: 40px;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: #ffffff;
+  background-color: $white;*/
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+.header-mobile-btn .mobile-icon-close {
+  display: none;
+}
+
+.header-mobile-btn.is-open .mobile-icon-close {
+  display: block;
+}
+
+.header-mobile-btn.is-open .mobile-icon-open {
+  display: none;
 }
 
 @media (min-width: 768px) {
@@ -1098,12 +1117,11 @@ footer {
   }
 }
 
-.header-logo-open {
+/*.header-logo-open {
   width: 24px;
   height: 16px;
   fill: black;
-}
-
+}*/
 .list-link {
   display: none;
 }
@@ -1122,8 +1140,10 @@ footer {
   }
 }
 
-.cont-link:not(:last-child) {
-  margin-right: 30px;
+@media (min-width: 1200px) {
+  .cont-link:not(:last-child) {
+    margin-right: 30px;
+  }
 }
 
 .menu-link {
@@ -1146,6 +1166,32 @@ footer {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: #757575;
+}
+
+.header-mobile-container {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  width: 100%;
+}
+
+.header-mobile-container .list-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header-mobile-menu {
+  /*display: flex;*/
+  text-align: center;
 }
 
 .logo-mail {
