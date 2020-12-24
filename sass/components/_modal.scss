@@ -28,12 +28,18 @@
   border-radius: 4px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
-  width: 528px;
-  height: 581px;
+  width: 100%;
+  max-width: 450px;
+  height: 609px;
   background-color: $white;
 
   transform: translate(-50%, -50%) scale(1);
   transition: transform $main-transition;
+
+  @include for-size(desktop) {
+    max-width: 528px;
+    height: 581px;
+  }
 }
 
 .modal-close {
@@ -57,9 +63,20 @@
 .modal-title {
   margin-bottom: 0px;
   font-family: $main-font-family;
-  @include fonts(20px, 700, 1.15);
+  @include fonts(20px, 700, 1.5);
   text-align: center;
   color: $main-text-color;
+  width: 100%;
+  max-width: 370px;
+  margin-left: auto;
+  margin-right: auto;
+
+  
+  @include for-size(desktop) {
+    @include fonts(20px, 700, 1.15);
+    max-width: 448px;
+  }
+
 }
 
 .modal-form:focus-within .modal-title {
@@ -221,5 +238,44 @@
     color: $title-color;
   }
 }
+
+.checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+}
+
+.icon-check {
+  display: block;
+  width: 16px;
+  height: 15px;
+  border: 2px solid $main-text-color;
+  border-radius: 2px;
+  margin-right: 7px;
+}
+
+.checkbox:checked + .icon-check {
+  background-color: $accent-color;
+  border-color: $accent-color;
+  background-image: url(../images/icons/icon-check.svg);
+  background-size: contain;
+  background-origin: border-box;
+}
+
+.checkbox-text {
+  font-family: $main-font-family;
+  @include fonts(12px, 400, 1.16);
+  color: $title-color;
+
+  @include for-size(desktop) {
+    @include fonts(14px, 400, 1.71);
+  }
+}
+
+.checkbox-link {
+  color: $accent-color;
+}
+
 
 
