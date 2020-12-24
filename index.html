@@ -15,7 +15,7 @@
         <div class="container header-container"> 
             <!--<div class="header-mobile-container">-->
             <a href="./index.html" class="link logo"><span class="logo-web">Web</span><span class="logo-studio">Studio</span></a>
-            <button class="header-mobile-btn is-open" data-menu-button type="button" aria-expanded="false">
+            <button class="header-mobile-btn is-open" data-menu-button type="button" aria-expanded="false" aria-controls="header-mobile-container">
                 <svg class="header-logo-open" width="40" height="40" aria-label="Переключатель мобильного меню">
                     <use class="mobile-icon-open" href="./images/mobile-icons/menu.svg#open"></use>
                     <use class="mobile-icon-close" href="./images/mobile-icons/menu.svg#close"></use>
@@ -42,7 +42,7 @@
                 +38 096 111 11 11</a></li>
             </ul>
 
-            <div class="header-mobile-container is-open" data-menu>
+            <div class="header-mobile-container" id="header-mobile-container" data-menu>
                 <nav class="header-mobile-navigation">
                     <ul class="list">
                         <li class="header-mobile-menu"><a href="./index.html" class="link menu-link active">Студия</a></li>

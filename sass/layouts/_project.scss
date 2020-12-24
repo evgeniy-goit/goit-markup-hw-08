@@ -1,5 +1,5 @@
 .section-poject {
-padding-top: 40px;
+  padding-top: 40px;
 
   @include for-size(tablet) {
     padding-top: 30px;
@@ -31,20 +31,18 @@ padding-top: 40px;
 
 .project-name {
   font-family: $main-font-family;
-  @include fonts (18px, 700, 2, 0.06em); 
+  @include fonts(18px, 700, 2, 0.06em);
   color: $main-text-color;
   margin-bottom: 0px;
 }
-  
+
 .project-form {
   font-family: $main-font-family;
-  @include fonts (16px, 400, 1.875); 
+  @include fonts(16px, 400, 1.875);
   color: $title-color;
   padding-top: 4px;
   margin: 0px;
 }
-
-
 
 .project-item-kind {
   display: block;
@@ -68,7 +66,7 @@ padding-top: 40px;
   &:not(:first-child) {
     margin-top: 30px;
   }
-  
+
   /*&:not(:nth-child(3n)) {
     margin-right: 30px;
   }*/
@@ -94,7 +92,7 @@ padding-top: 40px;
   @include for-size(tablet) {
     width: calc((100% - 30px) / 2);
     /*flex-basis: calc(100% / 2 - 30px);*/
-    
+
     &:not(:first-child) {
       margin-top: 0px;
     }
@@ -139,16 +137,24 @@ padding-top: 40px;
   margin: 0px;
   top: 0px;
   left: 0px;
-  padding: 63px 24px;
+  padding: 77px 24px;
   max-width: 100%;
   max-height: 100%;
   font-family: $main-font-family;
-  @include fonts (18px, 400, 1.56); 
+  @include fonts(18px, 400, 1.56);
   color: $white;
   background-color: rgba(33, 150, 243, 0.9);
   opacity: 1;
   transform: translateY(100%);
   transition: transform $main-transition;
+
+  @include for-size(tablet) {
+    padding: 49px 24px;
+  }
+
+  @include for-size(desktop) {
+    padding: 63px 24px;
+  }
 }
 
 .project-description {

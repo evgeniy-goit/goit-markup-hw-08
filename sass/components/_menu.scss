@@ -1,9 +1,14 @@
 .header-container {
-  position: relative;
+  /*position: relative;*/
   width: 100%;
   padding-top: 10px;
   padding-bottom: 10px;
+
   @include flex(flex, space-between, center) .logo {
+    @include for-size(tablet) {
+      margin-right: 88px;
+    }
+
     @include for-size(desktop) {
       margin-right: 93px;
     }
@@ -35,8 +40,6 @@
     display: inline-flex;
   }
 }
-
-
 
 .menu-item {
   display: flex;
@@ -89,44 +92,58 @@
   width: 24px;
   height: 16px;
   fill: black;
+
+  &:hover,
+  &:focus {
+    fill: $accent-color;
+  }
 }
 
 .list-link {
   display: none;
 
   @include for-size(tablet) {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   @include for-size(desktop) {
-    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
   }
 }
 
-
 .cont-link {
-
-  & > .contact-link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    @include fonts(14px, 500, 1.14, 0.02em);
-    color: $title-color;
-  }
-
   &:not(:last-child) {
+    @include for-size(tablet) {
+      margin-bottom: 10px;
+    }
+
     @include for-size(desktop) {
+      margin-bottom: 0px;
       margin-right: 30px;
     }
   }
-
 }
 
-.header-mobile-menu .menu-link {
+.contact-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include fonts(18px, 500, 1.16, 0.02em);
+  color: $title-color;
+
+  @include for-size(tablet) {
+    @include fonts(14px, 500, 1.14, 0.02em);
+  }
+}
+
+.menu-link {
   @include fonts(18px, 500, 1.16, 0.02em);
   color: $main-text-color;
 
-  @include for-size(desktop) {
+  @include for-size(tablet) {
     @include fonts(14px, 500, 1.14, 0.02em);
   }
 }
@@ -146,7 +163,8 @@
   left: 0px;
   width: 100%;
   background-color: $white;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 1px 3px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08),
+    0px 1px 3px rgba(0, 0, 0, 0.16);
 
   &.is-open {
     display: block;
@@ -185,7 +203,6 @@
     justify-content: center;
     align-items: center;
   }
-
 }
 
 .list .active {
@@ -194,11 +211,24 @@
   &::after {
     content: "";
     position: absolute;
-    bottom: -220%;
+    /*bottom: 0px;*/
     display: block;
     width: 100%;
     height: 4px;
     border-radius: 2px;
     background-color: $accent-color;
+  }
+
+  @include for-size(desktop) {
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -220%;
+      display: block;
+      width: 100%;
+      height: 4px;
+      border-radius: 2px;
+      background-color: $accent-color;
+    }
   }
 }

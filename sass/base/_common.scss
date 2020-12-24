@@ -6,7 +6,9 @@ body {
   color: $title-color;
 }
 
-*, ::after, ::before {
+*,
+::after,
+::before {
   box-sizing: inherit;
   outline: 2px solid tomato;
 }
@@ -35,9 +37,8 @@ html {
   }
 }
 
-
-
 .header {
+  position: relative;
   background-color: $white;
   border-bottom: 1px solid #ececec;
 }
@@ -48,9 +49,19 @@ h3 {
   margin-top: 0px;
 }
 
-
 .list {
   list-style: none;
   margin: 0px;
   padding: 0px;
+}
+
+.link {
+  color: inherit;
+  text-decoration: none;
+  transition: $main-transition;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
 }
